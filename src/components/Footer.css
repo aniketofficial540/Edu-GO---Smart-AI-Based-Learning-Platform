@@ -1,0 +1,158 @@
+.footer {
+    background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+    color: #fff;
+    padding: 2rem 0 0.5rem;
+    font-size: 0.9rem;
+}
+
+.footer-content {
+    padding-bottom: 1.5rem;
+    margin-bottom: 1rem;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    display: flex;
+    align-items: center;
+}
+
+.footer-brand {
+    margin-bottom: 1rem;
+}
+
+.logo-container {
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+    margin-bottom: 0.8rem;
+}
+
+.footer-logo-icon {
+    font-size: 1.8rem;
+    color: #6e45e2;
+    min-width: 30px;
+}
+
+.footer-brand-name {
+    font-size: 1.3rem;
+    font-weight: 600;
+    display: block;
+}
+
+.footer-tagline {
+    color: #a1a1a1;
+    margin: 0;
+    font-size: 0.85rem;
+}
+
+.linear-connect {
+    display: flex;
+    flex-direction: column;
+    gap: 0.8rem;
+}
+
+.linear-connect h5 {
+    color: #fff;
+    font-size: 1rem;
+    margin: 0;
+}
+
+.social-icons {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.social-icons a {
+    color: #a1a1a1;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    transition: all 0.2s;
+    font-size: 0.9rem;
+}
+
+.social-icons a:hover {
+    color: #6e45e2;
+}
+
+.social-icons a svg {
+    font-size: 1.1rem;
+}
+
+.footer-features.compact {
+    display: flex;
+    gap: 0.5rem;
+    margin-top: 0.8rem;
+}
+
+.footer-features.compact .feature-badge {
+    background: rgba(110, 69, 226, 0.2);
+    color: #b8a6ff;
+    padding: 0.2rem 0.6rem;
+    border-radius: 15px;
+    font-size: 0.75rem;
+    display: flex;
+    align-items: center;
+    gap: 0.3rem;
+}
+
+.footer-bottom {
+    padding-top: 0.5rem;
+    color: #a1a1a1;
+    font-size: 0.8rem;
+}
+
+.copyright,
+.credits {
+    text-align: center;
+    padding: 0.3rem 0;
+}
+
+.credits a {
+    color: #b8a6ff;
+    text-decoration: none;
+    transition: color 0.2s;
+}
+
+.credits a:hover {
+    color: #6e45e2;
+}
+
+@media (min-width: 768px) {
+    .copyright {
+        text-align: left;
+    }
+
+    .credits {
+        text-align: right;
+    }
+}
+
+@media (max-width: 767px) {
+    .footer-content {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .footer-brand {
+        margin-bottom: 1.5rem;
+    }
+
+    .linear-connect {
+  display: flex;
+  flex-direction: row; /* Explicitly set row layout */
+  align-items: center; /* Align vertically */
+  gap: 20px; /* Space between h5 and social-icons */
+  white-space: nowrap; /* Prevent text wrapping */
+}
+
+.social-icons {
+  display: flex;
+  gap: 15px; /* Space between social links */
+}
+
+.social-icons a {
+  display: flex;
+  align-items: center;
+  gap: 5px; /* Space between icon and text */
+}
+}

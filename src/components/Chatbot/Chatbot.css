@@ -1,0 +1,232 @@
+/* Use your existing color variables */
+:root {
+  --neon-purple: #b721ff;
+  --neon-teal: #21d4fd;
+  --neon-pink: #ff2ced;
+  --dark-bg: #0f0e17;
+  --text-primary: #fffffe;
+}
+
+.chatbot-wrapper {
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  z-index: 1000;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 15px;
+}
+
+.chatbot-toggle {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, var(--neon-purple), var(--neon-pink));
+  color: white;
+  border: none;
+  font-size: 1.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.neon-glow {
+  box-shadow: 0 0 15px var(--neon-purple), 
+              0 0 25px rgba(183, 33, 255, 0.5);
+}
+
+.neon-glow:hover {
+  box-shadow: 0 0 20px var(--neon-purple), 
+              0 0 35px rgba(183, 33, 255, 0.8);
+  transform: scale(1.05);
+}
+
+.chatbot-window {
+  width: 350px;
+  height: 500px;
+  background: rgba(15, 14, 23, 0.95);
+  backdrop-filter: blur(10px);
+  border-radius: 15px;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+.neon-border {
+  border: 1px solid rgba(183, 33, 255, 0.3);
+  box-shadow: 0 0 30px rgba(183, 33, 255, 0.3),
+              inset 0 0 10px rgba(183, 33, 255, 0.2);
+}
+
+.chatbot-header {
+  padding: 15px;
+  background: linear-gradient(90deg, var(--neon-purple), var(--neon-pink));
+  color: white;
+}
+
+.chatbot-header h3 {
+  margin: 0;
+  display: flex;
+  align-items: center;
+  font-size: 1.2rem;
+}
+
+.chatbot-messages {
+  flex: 1;
+  padding: 15px;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.message {
+  max-width: 85%;
+  padding: 10px 15px;
+  border-radius: 15px;
+  line-height: 1.4;
+  animation: messageIn 0.3s ease-out;
+}
+
+.message.bot {
+  background: rgba(33, 212, 253, 0.1);
+  border: 1px solid rgba(33, 212, 253, 0.3);
+  align-self: flex-start;
+  border-bottom-left-radius: 5px;
+  color: var(--text-primary);
+}
+
+.message.user {
+  background: rgba(183, 33, 255, 0.1);
+  border: 1px solid rgba(183, 33, 255, 0.3);
+  align-self: flex-end;
+  border-bottom-right-radius: 5px;
+  color: var(--text-primary);
+}
+
+.message.typing {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: var(--neon-teal);
+}
+
+.spin {
+  animation: spin 1s linear infinite;
+}
+
+.chatbot-input {
+  display: flex;
+  padding: 15px;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  background: rgba(0, 0, 0, 0.2);
+}
+
+.chatbot-input input {
+  flex: 1;
+  padding: 10px 15px;
+  border: none;
+  border-radius: 20px;
+  background: rgba(255, 255, 255, 0.1);
+  color: white;
+  outline: none;
+}
+
+.chatbot-input input::placeholder {
+  color: rgba(255, 255, 255, 0.5);
+}
+
+.send-btn {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, var(--neon-purple), var(--neon-pink));
+  border: none;
+  color: white;
+  margin-left: 10px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s ease;
+}
+
+.send-btn:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.send-btn:hover:not(:disabled) {
+  transform: scale(1.05);
+}
+
+@keyframes messageIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+/* Error states */
+.message.error {
+  color: #ff6b6b;
+  background: rgba(255, 107, 107, 0.1) !important;
+  border: 1px solid rgba(255, 107, 107, 0.3) !important;
+}
+
+.error-badge {
+  position: absolute;
+  top: -5px;
+  right: -5px;
+  width: 20px;
+  height: 20px;
+  background: #ff6b6b;
+  color: white;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.8rem;
+  font-weight: bold;
+}
+
+.connection-error {
+  position: absolute;
+  right: 15px;
+  background: rgba(255, 107, 107, 0.2);
+  padding: 3px 8px;
+  border-radius: 15px;
+  font-size: 0.8rem;
+  display: flex;
+  align-items: center;
+}
+
+.connection-error svg {
+  margin-right: 5px;
+}
+
+/* Accessibility improvements */
+.chatbot-toggle {
+  position: relative;
+}
+
+.chatbot-input input:disabled {
+  opacity: 0.7;
+  cursor: not-allowed;
+}
+
+/* Better loading states */
+.spin {
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}

@@ -1,0 +1,218 @@
+.App {
+  text-align: center;
+}
+
+.App-logo {
+  height: 40vmin;
+  pointer-events: none;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+    animation: App-logo-spin infinite 20s linear;
+  }
+}
+
+.App-header {
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.App-link {
+  color: #61dafb;
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* Roadmap Tree Styles */
+.roadmap-tree {
+  margin-top: 2rem;
+}
+
+.tree-category {
+  background: rgba(110, 69, 226, 0.1);
+  border-left: 4px solid #6e45e2;
+  padding: 1rem;
+  margin-bottom: 2rem;
+  border-radius: 0 8px 8px 0;
+}
+
+.tree-substeps {
+  list-style: none;
+  padding-left: 1.5rem;
+}
+
+.tree-substeps li {
+  position: relative;
+  padding-left: 2.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.tree-substeps li::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0.5rem;
+  height: 1.5rem;
+  width: 1.5rem;
+  border-left: 2px solid #6e45e2;
+  border-bottom: 2px solid #6e45e2;
+  border-radius: 0 0 0 8px;
+}
+
+.icon-purple {
+  color: #6e45e2;
+  font-size: 1.2rem;
+  position: absolute;
+  left: -0.25rem;
+  top: 0;
+  background: white;
+  padding: 0.25rem;
+  border-radius: 50%;
+}
+
+.substep-content {
+  background: rgba(255, 255, 255, 0.05);
+  padding: 1rem;
+  border-radius: 8px;
+}
+
+/* Progress Bar Variant */
+.progress-bar-purple {
+  background-color: #6e45e2 !important;
+}
+
+/* Roadmap Viewer Styles */
+.roadmap-viewer-section {
+  padding: 4rem 0;
+  min-height: 100vh;
+  background: rgba(110, 69, 226, 0.03);
+}
+
+.roadmap-container {
+  position: relative;
+  padding-left: 2rem;
+}
+
+.roadmap-container::before {
+  content: "";
+  position: absolute;
+  left: 3.5rem;
+  top: 0;
+  bottom: 0;
+  width: 2px;
+  background: linear-gradient(to bottom, 
+    rgba(110, 69, 226, 0.2), 
+    #6e45e2, 
+    rgba(110, 69, 226, 0.2));
+}
+
+.roadmap-category {
+  position: relative;
+  margin-bottom: 3rem;
+}
+
+.category-header {
+  display: flex;
+  align-items: center;
+  margin-bottom: 1.5rem;
+}
+
+.step-number {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 3rem;
+  height: 3rem;
+  background: #6e45e2;
+  color: white;
+  border-radius: 50%;
+  font-weight: bold;
+  margin-right: 1.5rem;
+  flex-shrink: 0;
+}
+
+.substeps-container {
+  margin-left: 4.5rem;
+}
+
+.substep-card {
+  background: white;
+  border-radius: 10px;
+  padding: 1.5rem;
+  margin-bottom: 1.5rem;
+  box-shadow: 0 4px 15px rgba(110, 69, 226, 0.1);
+  position: relative;
+}
+
+.substep-card::before {
+  content: "";
+  position: absolute;
+  left: -2.5rem;
+  top: 1.5rem;
+  width: 1.5rem;
+  height: 2px;
+  background: #6e45e2;
+}
+
+.substep-header {
+  display: flex;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+.substep-header h4 {
+  margin-left: 1rem;
+  margin-bottom: 0;
+}
+
+.substep-description {
+  color: #555;
+  margin-bottom: 1.5rem;
+}
+
+.resources-section {
+  background: rgba(110, 69, 226, 0.05);
+  padding: 1rem;
+  border-radius: 8px;
+}
+
+.resources-title {
+  display: flex;
+  align-items: center;
+  color: #6e45e2;
+  font-size: 1rem;
+}
+
+.resources-list {
+  padding-left: 1.5rem;
+  margin-bottom: 0;
+}
+
+.resource-link {
+  color: #333;
+  transition: all 0.3s ease;
+}
+
+.resource-link:hover {
+  color: #6e45e2;
+  text-decoration: none;
+}
+
+.icon-purple {
+  color: #6e45e2;
+  font-size: 1.2rem;
+}
