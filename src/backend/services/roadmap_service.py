@@ -6,7 +6,7 @@ import json
 load_dotenv()
 
 def generate_roadmap(goal: str) -> dict:
-    client = Groq(api_key=os.environ.get("GROQ_API_KEY"))
+    client = Groq(api_key=os.environ.get("REACT_APP_GROQ_API_KEY"))
     
     try:
         response = client.chat.completions.create(
