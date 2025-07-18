@@ -83,7 +83,7 @@ async def create_roadmap(request: GoalRequest):
 async def chat_with_ai(request: ChatRequest):  # Using Pydantic model for validation
     try:
         # Initialize Groq client with error handling
-        api_key = os.environ.get("GROQ_API_KEY")
+        api_key = os.environ.get("REACT_APP_GROQ_API_KEY")
         if not api_key:
             raise HTTPException(status_code=500, detail="API key not configured")
 
